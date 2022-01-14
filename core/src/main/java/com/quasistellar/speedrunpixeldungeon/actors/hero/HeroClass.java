@@ -42,6 +42,7 @@ import com.quasistellar.speedrunpixeldungeon.actors.hero.abilities.warrior.Endur
 import com.quasistellar.speedrunpixeldungeon.items.Amulet;
 import com.quasistellar.speedrunpixeldungeon.items.BrokenSeal;
 import com.quasistellar.speedrunpixeldungeon.items.Item;
+import com.quasistellar.speedrunpixeldungeon.items.TengusMask;
 import com.quasistellar.speedrunpixeldungeon.items.Waterskin;
 import com.quasistellar.speedrunpixeldungeon.items.armor.ClothArmor;
 import com.quasistellar.speedrunpixeldungeon.items.artifacts.CloakOfShadows;
@@ -97,8 +98,12 @@ public enum HeroClass {
 		Waterskin waterskin = new Waterskin();
 		waterskin.collect();
 
-		Amulet amulet = new Amulet();
-		amulet.collect();
+//		if (DeviceCompat.isDebug()) {
+//			Amulet amulet = new Amulet();
+//			amulet.collect();
+//			TengusMask mask = new TengusMask();
+//			mask.collect();
+//		}
 
 		new ScrollOfIdentify().identify();
 

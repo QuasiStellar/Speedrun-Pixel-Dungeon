@@ -199,7 +199,7 @@ public class SPDSettings extends GameSettings {
 	}
 	
 	public static boolean music() {
-		return getBoolean( KEY_MUSIC, false );
+		return getBoolean( KEY_MUSIC, true );
 	}
 	
 	public static void musicVol( int value ){
