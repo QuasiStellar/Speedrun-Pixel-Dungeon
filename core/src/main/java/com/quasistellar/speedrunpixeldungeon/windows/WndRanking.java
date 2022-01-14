@@ -342,52 +342,57 @@ public class WndRanking extends WndTabbed {
 				add( txt );
 				floor++;
 				y += 8;
-				if (y > 8 * 8 + title.bottom() + 6) {
+				if (floor == 26) break;
+				if (floor % 5 == 1 && floor < 25) {
 					x += (float) WIDTH / 3;
-					y = title.bottom() + 6;
+					y -= 8 * 5;
+					if (floor == 16) {
+						x = (float) WIDTH / 6;
+						y = title.bottom() + 6 + 8 * 5;
+					}
 				}
 			}
-			y = title.bottom() + 80;
+			y = title.bottom() + 6 + 8 * 10;
 			x = 0;
 			RenderedTextBlock txt1 = PixelScene.renderTextBlock(String.format("_Sewers_: %s", Timer.timeToString(
 					splits[0] +
 					splits[1] +
 					splits[2] +
 					splits[3] +
-					splits[4])), 8 );
+					splits[4])), 7 );
 			txt1.setPos(x, y);
 			add( txt1 );
-			y += 10;
+			y += 9;
 			x += 10;
 			RenderedTextBlock txt2 = PixelScene.renderTextBlock(String.format("_Prison_: %s", Timer.timeToString(
 					splits[5] +
 					splits[6] +
 					splits[7] +
 					splits[8] +
-					splits[9])), 8 );
+					splits[9])), 7 );
 			txt2.setPos(x, y);
 			add( txt2 );
-			y += 10;
+			y += 9;
 			x += 10;
 			RenderedTextBlock txt3 = PixelScene.renderTextBlock(String.format("_Caves_: %s", Timer.timeToString(
 					splits[10] +
 					splits[11] +
 					splits[12] +
 					splits[13] +
-					splits[14])), 8 );
+					splits[14])), 7 );
 			txt3.setPos(x, y);
 			add( txt3 );
-			y += 10;
+			y += 9;
 			x += 10;
 			RenderedTextBlock txt4 = PixelScene.renderTextBlock(String.format("_Metropolis_: %s", Timer.timeToString(
 					splits[15] +
 					splits[16] +
 					splits[17] +
 					splits[18] +
-					splits[19])), 8 );
+					splits[19])), 7 );
 			txt4.setPos(x, y);
 			add( txt4 );
-			y += 10;
+			y += 9;
 			x += 10;
 			RenderedTextBlock txt5 = PixelScene.renderTextBlock(String.format("_Demon Halls_: %s", Timer.timeToString(
 					splits[20] +
@@ -395,11 +400,9 @@ public class WndRanking extends WndTabbed {
 					splits[22] +
 					splits[23] +
 					splits[24] +
-					splits[25])), 8 );
+					splits[25])), 7 );
 			txt5.setPos(x, y);
 			add( txt5 );
-			y += 10;
-			x += 10;
 		}
 	}
 
