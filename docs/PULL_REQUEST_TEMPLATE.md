@@ -1,0 +1,1 @@
+Please make sure that your code is **clean and easily readable**. Abide by common PR practices and **common sense**. Bad PRs will be rejected.
