@@ -178,7 +178,6 @@ public class StatusPane extends Component {
 		if (Dungeon.bones) {
 			bonesMarker = new Image(Icons.get(Icons.BONES_ON));
 			add( bonesMarker );
-			GLog.h("what");
 		}
 	}
 
