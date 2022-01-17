@@ -225,7 +225,8 @@ public class Dungeon {
 		goalSplitTime = 0;
 		finishTime = -1;
 
-		category = Dungeon.bones ? "Bones%" : "Any%" + (Dungeon.challenges == Challenges.MAX_VALUE ? " All Challenges" : "");
+		category = Dungeon.bones ? "Bones%" : Dungeon.challenges == Challenges.MAX_VALUE ? "All Challenges" : "Any%";
+		SPDSettings.numberOfAttempts(category, SPDSettings.numberOfAttempts(category) + 1);
 
 		splits = new long[26];
 

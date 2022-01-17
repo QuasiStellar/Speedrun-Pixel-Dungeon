@@ -178,6 +178,9 @@ public class HeroSelectScene extends PixelScene {
 				if( !visible && GamesInProgress.selectedClass != null){
 					visible = true;
 				}
+				if (visible) {
+					icon(Icons.get(SPDSettings.challenges() > 0 ? Icons.CHALLENGE_ON : Icons.CHALLENGE_OFF));
+				}
 				super.update();
 			}
 		};
@@ -198,6 +201,9 @@ public class HeroSelectScene extends PixelScene {
 			public void update() {
 				if( !visible && GamesInProgress.selectedClass != null){
 					visible = true;
+				}
+				if (visible) {
+					icon(Icons.get(SPDSettings.bones() ? Icons.BONES_ON : Icons.BONES_OFF));
 				}
 				super.update();
 			}
@@ -263,6 +269,8 @@ public class HeroSelectScene extends PixelScene {
 	@Override
 	public void update() {
 		super.update();
+		challengeButton.update();
+		bonesButton.update();
 		//do not fade when a window is open
 		for (Object v : members){
 			if (v instanceof Window) resetFade();

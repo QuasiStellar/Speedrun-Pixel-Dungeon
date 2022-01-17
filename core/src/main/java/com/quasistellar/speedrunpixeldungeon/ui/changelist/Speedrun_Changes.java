@@ -35,7 +35,8 @@ public class Speedrun_Changes {
 		ChangeInfo changes = new ChangeInfo( "Speedrun Pixel Dungeon", true, "");
 		changes.hardlight( Window.BLUE);
 		changeInfos.add(changes);
-		
+
+		add_v1_1_Changes(changeInfos);
 		add_v1_0_Changes(changeInfos);
 	}
 	
@@ -76,6 +77,22 @@ public class Speedrun_Changes {
 				"_-_ Rankings are sorted by time and contain information about splits.\n" +
 				"_-_ Bones are customisable.\n" +
 				"_-_ Only one save slot is available."));
+
+	}
+
+	public static void add_v1_1_Changes(ArrayList<ChangeInfo> changeInfos ){
+
+		ChangeInfo changes = new ChangeInfo("v1.1", true, "");
+		changes.hardlight(Window.BLUE);
+		changeInfos.add(changes);
+
+		changes.addButton( new ChangeButton(new ItemSprite(ItemSpriteSheet.WAND_LIGHTNING, null), "Developer Commentary",
+				"_-_ Released January 17th, 2022"));
+
+		changes.addButton( new ChangeButton(new ItemSprite(ItemSpriteSheet.WAND_DISINTEGRATION, null), "Fixes and improvements",
+				"_-_ Redundant category deleted.\n" +
+						"_-_ Category indicators moved.\n" +
+						"_-_ Rankings now show the number of attempts."));
 
 	}
 }

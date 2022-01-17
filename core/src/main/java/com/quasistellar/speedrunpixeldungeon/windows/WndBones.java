@@ -41,6 +41,7 @@ import com.quasistellar.speedrunpixeldungeon.items.wands.WandOfFireblast;
 import com.quasistellar.speedrunpixeldungeon.items.wands.WandOfLightning;
 import com.quasistellar.speedrunpixeldungeon.items.wands.WandOfMagicMissile;
 import com.quasistellar.speedrunpixeldungeon.messages.Messages;
+import com.quasistellar.speedrunpixeldungeon.scenes.HeroSelectScene;
 import com.quasistellar.speedrunpixeldungeon.scenes.PixelScene;
 import com.quasistellar.speedrunpixeldungeon.ui.Icons;
 import com.quasistellar.speedrunpixeldungeon.ui.ItemSlot;
@@ -48,6 +49,7 @@ import com.quasistellar.speedrunpixeldungeon.ui.RedButton;
 import com.quasistellar.speedrunpixeldungeon.ui.RenderedTextBlock;
 import com.quasistellar.speedrunpixeldungeon.ui.Window;
 import com.quasistellar.speedrunpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.NinePatch;
 import com.watabou.noosa.audio.Sample;
@@ -227,11 +229,6 @@ public class WndBones extends Window {
 			item = bonesItem;
 			slot.item(item);
 		}
-
-		ItemButton(Item bonesItem, Image image) {
-			item = bonesItem;
-			slot.item(item);
-		}
 		
 		@Override
 		protected void createChildren() {
@@ -262,6 +259,8 @@ public class WndBones extends Window {
 		protected void onClick() {
 			Bones.leave(this.item);
 			SPDSettings.bones(true);
+			SPDSettings.challenges(0);
+			Game.scene().update();
 		}
 		
 		@Override

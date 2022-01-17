@@ -31,6 +31,7 @@ import com.quasistellar.speedrunpixeldungeon.ui.IconButton;
 import com.quasistellar.speedrunpixeldungeon.ui.Icons;
 import com.quasistellar.speedrunpixeldungeon.ui.RenderedTextBlock;
 import com.quasistellar.speedrunpixeldungeon.ui.Window;
+import com.watabou.noosa.Game;
 
 import java.util.ArrayList;
 
@@ -107,6 +108,8 @@ public class WndChallenges extends Window {
 				}
 			}
 			SPDSettings.challenges( value );
+			SPDSettings.bones(false);
+			Game.scene().update();
 		}
 
 		super.onBackPressed();

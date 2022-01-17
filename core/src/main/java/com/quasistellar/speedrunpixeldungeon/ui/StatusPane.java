@@ -173,9 +173,7 @@ public class StatusPane extends Component {
 		} else if (Dungeon.challenges > 0) {
 			challengesMarker = new Image(Icons.get(Icons.CHALLENGE_OFF));
 			add( challengesMarker );
-		}
-
-		if (Dungeon.bones) {
+		} else if (Dungeon.bones) {
 			bonesMarker = new Image(Icons.get(Icons.BONES_ON));
 			add( bonesMarker );
 		}
@@ -228,21 +226,14 @@ public class StatusPane extends Component {
 		timer.setPos(0, avatar.y + avatar.height + 19);
 
 		if (Dungeon.challenges == Challenges.MAX_VALUE) {
-			fullChallengesMarker.x = 4;
-			fullChallengesMarker.y = timer.bottom() + 30;
+			fullChallengesMarker.x = width - 58;
+			fullChallengesMarker.y = 4;
 		} else if (Dungeon.challenges > 0) {
-			challengesMarker.x = 4;
-			challengesMarker.y = timer.bottom() + 30;
-		}
-
-		if (Dungeon.bones) {
-			if (Dungeon.challenges > 0) {
-				bonesMarker.x = 4;
-				bonesMarker.y = timer.bottom() + 30 + 16;
-			} else {
-				bonesMarker.x = 4;
-				bonesMarker.y = timer.bottom() + 30;
-			}
+			challengesMarker.x = width - 58;
+			challengesMarker.y = 4;
+		} else if (Dungeon.bones) {
+			bonesMarker.x = width - 58;
+			bonesMarker.y = 5;
 		}
 	}
 	

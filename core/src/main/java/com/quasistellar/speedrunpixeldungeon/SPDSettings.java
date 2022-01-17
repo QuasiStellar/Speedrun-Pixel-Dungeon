@@ -341,6 +341,14 @@ public class SPDSettings extends GameSettings {
 		return getInt( category + "number_of_runs", 0 );
 	}
 
+	public static void numberOfAttempts( String category, int value ){
+		put( category + "number_of_attempts", value );
+	}
+
+	public static int numberOfAttempts( String category ){
+		return getInt( category + "number_of_attempts", 0 );
+	}
+
 	public static void averageRunTime( String category, long value ){
 		put( category + "average", value );
 	}

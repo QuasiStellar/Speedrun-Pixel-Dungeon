@@ -44,7 +44,7 @@ import com.watabou.utils.FileUtils;
 
 public class WelcomeScene extends PixelScene {
 
-	private static final int LATEST_UPDATE = SpeedrunPixelDungeon.v1_0_0__1_1_1;
+	private static final int LATEST_UPDATE = SpeedrunPixelDungeon.v1_1_0__1_1_1;
 
 	@Override
 	public void create() {
@@ -159,7 +159,7 @@ public class WelcomeScene extends PixelScene {
 				message += "\n";
 				//message += "\n" + Messages.get(this, "patch_balance");
 				message += "\n" + Messages.get(this, "patch_bugfixes");
-				message += "\n" + Messages.get(this, "patch_translations");
+//				message += "\n" + Messages.get(this, "patch_translations");
 
 			}
 		} else {

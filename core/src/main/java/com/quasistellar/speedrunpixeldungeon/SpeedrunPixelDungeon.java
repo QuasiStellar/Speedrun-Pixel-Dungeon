@@ -37,6 +37,7 @@ public class SpeedrunPixelDungeon extends Game {
 	//versions older than OLD_VERSION are no longer supported, and data from them is ignored
 	public static final int OLD_VERSION  = 0;
 	public static final int v1_0_0__1_1_1  = 1;
+	public static final int v1_1_0__1_1_1  = 2;
 	
 	public SpeedrunPixelDungeon(PlatformSupport platform ) {
 		super( sceneClass == null ? WelcomeScene.class : sceneClass, platform );

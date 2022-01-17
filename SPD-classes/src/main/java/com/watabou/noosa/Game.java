@@ -64,7 +64,7 @@ public class Game implements ApplicationListener {
 	public static int versionCode;
 	
 	// Current scene
-	protected Scene scene;
+	public Scene scene;
 	// New scene we are going to switch to
 	protected Scene requestedScene;
 	// true if scene switch is requested

@@ -23,6 +23,7 @@ package com.quasistellar.speedrunpixeldungeon.scenes;
 
 import com.quasistellar.speedrunpixeldungeon.Assets;
 import com.quasistellar.speedrunpixeldungeon.Rankings;
+import com.quasistellar.speedrunpixeldungeon.SPDSettings;
 import com.quasistellar.speedrunpixeldungeon.SpeedrunPixelDungeon;
 import com.quasistellar.speedrunpixeldungeon.actors.hero.HeroClass;
 import com.quasistellar.speedrunpixeldungeon.effects.Flare;
@@ -62,8 +63,7 @@ public class RankingsScene extends PixelScene {
 	public static final LinkedList<String> categories = new LinkedList<>(Arrays.asList(
 			"Any%",
 			"Bones%",
-			"Any% All Challenges",
-			"Bones% All Challenges"
+			"All Challenges"
 	));
 
 	private void nextCategory() {
@@ -72,7 +72,7 @@ public class RankingsScene extends PixelScene {
 	}
 
 	private void previousCategory() {
-		category = (category + 3) % categories.size();
+		category = (category + (categories.size() - 1)) % categories.size();
 		this.create();
 	}
 
@@ -153,23 +153,19 @@ public class RankingsScene extends PixelScene {
 				
 				pos++;
 			}
-			
-//			if (categoryRecords.size() >= Rankings.TABLE_SIZE) {
-//
-//				RenderedTextBlock label = PixelScene.renderTextBlock( 8 );
-//				label.hardlight( 0xCCCCCC );
-//				label.setHightlighting(true, Window.SHPX_COLOR);
-//				label.text( Messages.get(this, "total") + " _" + Rankings.INSTANCE.wonNumber + "_/" + Rankings.INSTANCE.totalNumber );
-//				add( label );
-//
-//				label.setPos(
-//						(w - label.width()) / 2,
-//						h - label.height() - 2*GAP
-//				);
-//				align(label);
-//
-//			}
-			
+
+			RenderedTextBlock label = PixelScene.renderTextBlock( 8 );
+			label.hardlight( 0xCCCCCC );
+			label.setHightlighting(true, Window.SHPX_COLOR);
+			label.text( Messages.get(this, "total") + " " + SPDSettings.numberOfAttempts(categories.get(category)));
+			add( label );
+
+			label.setPos(
+					(w - label.width()) / 2,
+					h - label.height() - 2*GAP
+			);
+			align(label);
+
 		} else {
 
 			RenderedTextBlock noRec = PixelScene.renderTextBlock(Messages.get(this, "no_wins"), 8);
